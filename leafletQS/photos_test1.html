@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>leaflet-map-simple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Position the map and title with Cascading Style Sheet (CSS) -->
+  <style>
+  body { margin:0; padding:0; }
+  #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+  #map-title { position: relative; margin-top: 10px; margin-left: 50px; float: left; background: white; border: 2px solid rgba(0,0,0,0.2); padding: 6px 8px; font-family: Helvetica; font-weight: bold; font-size: 24px; z-index: 800; }
+  </style>
+</head>
+<body>
+
+  <!-- Display the map and title with HTML division tags  -->
+  <div id="map-title">Photos Test Simple Map</div>
+  <div id="map"></div>
+
+<!-- Create the interactive map content with JavaScript (.js) -->
+<script>
+    // set center coordinates
+    var coords = [34.069, -118.293];
+    // set default zoom level
+    var zoomLevel = 12;
+    // initialize map
+    var map = L.map('map').setView(coords, zoomLevel);
+    // set source for map tiles
+    ATTR = '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> | ' +
+    '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
+    CDB_URL = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+    // add tiles to map
+    L.tileLayer(CDB_URL, {
+    attribution: ATTR
+    }).addTo(map);
+
+    var photos = [{
+    "lat": 34.04555452,
+    "lng": -118.3001509,
+    "name": "C.H. Johnston, 1951",
+    "url": "https://tsmcgrath.github.io/wf_pocs/WestHighlandWay/images/IMG_3536.jpg",
+    "thumbnail": "http://40.media.tumblr.com/8dd3cc5931650a6a772db77f6fad797b/tumblr_n5c7uw79Yn1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.0522683,
+    "lng": -118.2698607,
+    "name": "L.A. Paving Co., Inc., 1925",
+    "url": "http://41.media.tumblr.com/83454d0e9cddfa5e9dcf2911ad9f803c/tumblr_n3q2xjrmvk1tq6tdto1_400.jpg",
+    "thumbnail": "http://41.media.tumblr.com/83454d0e9cddfa5e9dcf2911ad9f803c/tumblr_n3q2xjrmvk1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.06281904,
+    "lng": -118.2809651,
+    "name": "Buxton & Rosa, 1930",
+    "url": "http://36.media.tumblr.com/e46918901ad4cc6547ea27233873e879/tumblr_n3q2pdzLXM1tq6tdto1_400.jpg",
+    "thumbnail": "http://40.media.tumblr.com/e46918901ad4cc6547ea27233873e879/tumblr_n3q2pdzLXM1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.06370117,
+    "lng": -118.2967767,
+    "name": "A. M. Concrete Inc., 1990",
+    "url": "http://41.media.tumblr.com/634b3ebae1233626c427dbfc44b3261a/tumblr_n1m6xg3ik81tq6tdto1_400.jpg",
+    "thumbnail": "http://41.media.tumblr.com/634b3ebae1233626c427dbfc44b3261a/tumblr_n1m6xg3ik81tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.05123715,
+    "lng": -118.3195567,
+    "name": "Atkinson–Spicer Co., 1926",
+    "url": "http://40.media.tumblr.com/1db33e935ff486d74cbe35706fc9855a/tumblr_n2m0o6gcvY1tq6tdto1_400.jpg",
+    "thumbnail": "http://36.media.tumblr.com/1db33e935ff486d74cbe35706fc9855a/tumblr_n2m0o6gcvY1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.0696981,
+    "lng": -118.3614635,
+    "name": "Lew. Odell, 1937",
+    "url": "http://36.media.tumblr.com/6737d1a172353dcd80bebe5b56d96150/tumblr_n2m20mOESy1tq6tdto1_400.jpg",
+    "thumbnail": "http://41.media.tumblr.com/6737d1a172353dcd80bebe5b56d96150/tumblr_n2m20mOESy1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.0707379,
+    "lng": -118.3615279,
+    "name": "Frank J. Heilmann, 1937",
+    "url": "http://36.media.tumblr.com/1b5550f571e508a7a9ddc057ad07096c/tumblr_n2m24ceaF91tq6tdto1_400.jpg",
+    "thumbnail": "http://40.media.tumblr.com/1b5550f571e508a7a9ddc057ad07096c/tumblr_n2m24ceaF91tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.06903154,
+    "lng": -118.361485,
+    "name": "Tryon & Brain, 1925",
+    "url": "http://41.media.tumblr.com/58a45a711a9b39015fdb0601585e1b44/tumblr_n2m1viKp6v1tq6tdto1_400.jpg",
+    "thumbnail": "http://41.media.tumblr.com/58a45a711a9b39015fdb0601585e1b44/tumblr_n2m1viKp6v1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.07611449,
+    "lng": -118.2561439,
+    "name": "So. Calif. Gas Co., 1987",
+    "url": "http://40.media.tumblr.com/8f7f0543d4f53f114fa866b57465380a/tumblr_n294lvcY9H1tq6tdto1_400.jpg",
+    "thumbnail": "http://41.media.tumblr.com/8f7f0543d4f53f114fa866b57465380a/tumblr_n294lvcY9H1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.09311068,
+    "lng": -118.2675621,
+    "name": "James Martin, 1925",
+    "url": "http://40.media.tumblr.com/b4ff9e91abd2ba2d8242da9536aa412c/tumblr_n5c729VoJi1tq6tdto1_400.jpg",
+    "thumbnail": "http://40.media.tumblr.com/b4ff9e91abd2ba2d8242da9536aa412c/tumblr_n5c729VoJi1tq6tdto1_75sq.jpg"
+    }, {
+    "lat": 34.10834904,
+    "lng": -118.3322972,
+    "name": "Geo. A. Shepard, 1926",
+    "url": "http://40.media.tumblr.com/tumblr_lu4gtf1ez31qex1i7o1_400.jpg",
+    "thumbnail": "http://41.media.tumblr.com/tumblr_lu4gtf1ez31qex1i7o1_75sq.jpg"
+    }];
+
+    var photoLayer = L.photo.cluster().on('click', function(evt) {
+    var photo = evt.layer.photo;
+    var template = '<img src="{url}" /></a><p>{name}</p>';
+    evt.layer.bindPopup(L.Util.template(template, photo), {
+        minWidth: 400
+    }).openPopup();
+    });
+
+    photoLayer.add(photos).addTo(map);
+</script>
+</body>
+</html>
