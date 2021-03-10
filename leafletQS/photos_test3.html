@@ -6,8 +6,25 @@
   <meta charset="utf-8">
 
   <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <!-- Load Leaflet from CDN-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  <link rel="stylesheet" href="./styles/Leaflet.Photo.css"/>
+  <link rel="stylesheet" href="./styles/MarkerCluster.css"/>
+  <link rel="stylesheet" href="./styles/MarkerCluster.Default.css"/>
+
+    <!-- Load Leaflet from CDN -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>  
+
+    <!-- Load dependencies -->
+    <script src="./src/leaflet-spin/leaflet.spin.min.js" charset="utf-8"></script>
+    <script src="./src/leaflet-spin/leaflet.spin.js" charset="utf-8"></script>
+    <script src="./src/Leaflet.Photo.js" charset="utf-8"></script>
+    <script src="./src/leaflet.markercluster.js" charset="utf-8"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js" charset="utf-8"></script>
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -45,7 +62,7 @@
   L.marker([55.9433, -4.3170]).addTo(map) // EDIT marker coordinates
   .bindPopup("1st pop-up"); // EDIT pop-up text message
 
-   /* Display a 2nd point marker with pop-up text */
+   /* Display a cluster of point markers with pop-up text */
    L.marker([55.9433, -4.3170]).addTo(map) // EDIT marker coordinates
   .bindPopup("2nd pop-up"); // EDIT pop-up text message
 
