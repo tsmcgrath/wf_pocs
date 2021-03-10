@@ -29,7 +29,7 @@
   var map = L.map('map', {
     center: [55.9433, -4.3170], // EDIT coordinates to re-center map
     zoom: 12,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
-    scrollWheelZoom: false,
+    scrollWheelZoom: true,
     tap: false
   });
 
@@ -43,8 +43,34 @@
 
   /* Display a point marker with pop-up text */
   L.marker([55.9433, -4.3170]).addTo(map) // EDIT marker coordinates
-  .bindPopup("Insert pop-up text here"); // EDIT pop-up text message
+  .bindPopup("1st pop-up"); // EDIT pop-up text message
 
+   /* Display a 2nd point marker with pop-up text */
+   L.marker([55.9433, -4.3170]).addTo(map) // EDIT marker coordinates
+  .bindPopup("2nd pop-up"); // EDIT pop-up text message
+
+  /* Get one thumbnail to display */
+  /* Line 15 from Day1PhotosTest.geojson */
+  /* { "type": "Feature", "properties": { "photo": "https://tsmcgrath.github.io/wf_pocs/WestHighlandWay/images/IMG_3598.jpg", "filename": "IMG_3598", "directory": "https://tsmcgrath.github.io/wf_pocs/WestHighlandWay/images/", "altitude": 55.0, "direction": 221.739, "longitude": "-4.317855555555555", "latitude": "55.94142222222222", "timestamp": "2019-08-15T08:41:27" }, "geometry": { "type": "Point", "coordinates": [ -4.317855555555555, 55.941422222222222, 55.0 ] } },
+*/
+  var photos = [{
+      "lat": 55.94142222222222,
+      "lng": -4.317855555555555,
+      "name": "IMG_3598",
+      "url": "https://tsmcgrath.github.io/wf_pocs/WestHighlandWay/images/IMG_3598.jpg",
+      "thumbnail": "https://tsmcgrath.github.io/wf_pocs/WestHighlandWay/images/IMG_3598_thumb.jpg"
+  }];
+
+  var photoLayer = L.photo.cluster().on('click', function(evt) {
+    var photo = evt.layer.photo;
+    var template = '<img src="{url}" /></a><p>{name}</p>';
+    evt.layer.bindPopup(L.Util.template(template, photo), {
+      minWidth: 400
+    }).openPopup();
+  });
+
+  photoLayer.add(photos).addTo(map);
+  map.fitBounds(photoLayer.getBounds());
   </script>
 </body>
 </html>
