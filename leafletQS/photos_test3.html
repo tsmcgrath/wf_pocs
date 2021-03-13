@@ -22,10 +22,12 @@
     <!-- Load dependencies -->
     <script src="./src/leaflet-spin/leaflet.spin.min.js" charset="utf-8"></script>
     <script src="./src/leaflet-spin/leaflet.spin.js" charset="utf-8"></script>
-    <script src="./src/Leaflet.Photo.js" charset="utf-8"></script>
     <script src="./src/leaflet.markercluster.js" charset="utf-8"></script>
+    <script src="./src/Leaflet.Photo.js" charset="utf-8"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js" charset="utf-8"></script>
-    require(markercluster)
+    
+    import * as L from 'leaflet';
+    import 'leaflet.markerCluster';
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -62,6 +64,9 @@
   /* Display a point marker with pop-up text */
   L.marker([55.9433, -4.3170]).addTo(map) // EDIT marker coordinates
   .bindPopup("1st pop-up"); // EDIT pop-up text message
+
+  /* initialize markerCluster */
+  L.MarkerClusterGroup.prototype.initialize.call()
 
    /* Display a cluster of point markers with pop-up text */
    L.marker([55.9433, -4.3170]).addTo(map) // EDIT marker coordinates
