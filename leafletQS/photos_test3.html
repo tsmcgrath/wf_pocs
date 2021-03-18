@@ -11,8 +11,8 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
   <link rel="stylesheet" href="./styles/Leaflet.Photo.css"/>
-  <link rel="stylesheet" href="./styles/MarkerCluster.css"/>
-  <link rel="stylesheet" href="./styles/MarkerCluster.Default.css"/>
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
 
     <!-- Load Leaflet from CDN -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -20,14 +20,14 @@
     crossorigin=""></script>  
 
     <!-- Load dependencies -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
     <script src="./src/leaflet-spin/leaflet.spin.min.js" charset="utf-8"></script>
     <script src="./src/leaflet-spin/leaflet.spin.js" charset="utf-8"></script>
     <script src="./src/leaflet.markercluster.js" charset="utf-8"></script>
     <script src="./src/Leaflet.Photo.js" charset="utf-8"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js" charset="utf-8"></script>
     
-    import * as L from 'leaflet';
-    import 'leaflet.markerCluster';
+
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -35,13 +35,7 @@
   #map { position: absolute; top:0; bottom:0; right:0; left:0; }
   #map-title { position: relative; margin-top: 10px; margin-left: 50px; float: left; background: white; border: 2px solid rgba(0,0,0,0.2); padding: 6px 8px; font-family: Helvetica; font-weight: bold; font-size: 24px; z-index: 800; }
   </style>
-</head>
-<body>
-
-  <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">WHW Simple Map</div>
-  <div id="map"></div>
-
+  
   <!-- Create the interactive map content with JavaScript (.js) -->
   <script>
 
@@ -95,5 +89,12 @@
   photoLayer.add(photos).addTo(map);
   map.fitBounds(photoLayer.getBounds());
   </script>
+
+</head>
+<body>
+
+  <!-- Display the map and title with HTML division tags  -->
+  <div id="map-title">WHW Simple Map</div>
+  <div id="map"></div>
 </body>
 </html>
