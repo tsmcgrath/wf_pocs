@@ -17,19 +17,12 @@
                 }).addTo(map);
 
                 // add the WHW route lines
-                // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
-                fetch('./data/milngavie-drymen.geojson')
-                .then(function (resonse) {
-                    return response.json();
+                // loading GeoJSON file - Here my html and .geojson file resides in the data sub-folder
+                $.getJSON("./data/milngavie-drymen.geojson",function(data){
+                    // add GeoJSON layer to the map once the file is loaded
+                    L.geoJSON(data).addTo(map);
+                  });
 
-                })
-                .then(function (data) {
-                    L.geoJSON(data, {
-                        style: function (feature) {
-                            return {color: feature.properties.color};
-                        }
-                    }).addTo(map);
-                });
 
                 return map;
             }
