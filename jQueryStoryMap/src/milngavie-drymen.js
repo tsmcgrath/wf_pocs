@@ -1,4 +1,4 @@
-var milnavie-drymen {
+var milngavie_drymen {
 "type": "FeatureCollection",
 "name": "milngavie-drymen",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
