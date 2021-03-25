@@ -8,13 +8,28 @@
             selector: '[data-place]',
             breakpointPos: '33.333%',
             createMap: function () {
-                // create a map in the "map" div, set the view to a given place and zoom
-                var map = L.map('map').setView([65, 18], 5);
+                // create a map in the "map" div, set the view to the WHW route center and a good overall zoom
+                var map = L.map('map').setView([56.4048, -4.6424], 9);
 
                 // add an OpenStreetMap tile layer
                 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
+
+                // add the WHW route lines
+                // loading GeoJSON file - Here my html and usa_adm.geojson file resides in same folder
+                fetch('./data/milngavie-drymen.geojson')
+                .then(function (resonse) {
+                    return response.json();
+
+                })
+                .then(function (data) {
+                    L.geoJSON(data, {
+                        style: function (feature) {
+                            return {color: feature.properties.color};
+                        }
+                    }).addTo(map);
+                });
 
                 return map;
             }
