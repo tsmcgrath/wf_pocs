@@ -23,6 +23,11 @@
                     L.geoJSON(data).addTo(map);
                   });
 
+                  // Add day 2
+                  $.getJSON("./data/drymen-rowardennan.geojson",function(data){
+                    // add GeoJSON layer to the map once the file is loaded
+                    L.geoJSON(data).addTo(map);
+                  });
 
                 return map;
             }
