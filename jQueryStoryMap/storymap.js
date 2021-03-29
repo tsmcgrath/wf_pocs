@@ -17,15 +17,17 @@
                 }).addTo(map);
 
                 // add the WHW route lines
-                // Add day 2
-                var day2style = {
+                // Add day 1
+                var day1style = {
                     "color": "#ff7800",
                     "weight": 5
                 }
                 // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
                 $.getJSON("./data/milngavie-drymen.geojson",function(data){
                     // add GeoJSON layer to the map once the file is loaded
-                    L.geoJSON(data).addTo(map);
+                    L.geoJSON(data, {
+                        style: day1style
+                    }).addTo(map);
                   });
 
                   // Add day 2
@@ -35,7 +37,9 @@
                   }
                   $.getJSON("./data/drymen-rowardennan.geojson",function(data){
                     // add GeoJSON layer to the map once the file is loaded
-                    L.geoJSON(data).addTo(map);
+                    L.geoJSON(data, {
+                        style: day2style
+                    }).addTo(map);
                   });
 
                 return map;
