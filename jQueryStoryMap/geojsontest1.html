@@ -1,10 +1,15 @@
 <html>
 <head>
   <title>A Leaflet map!</title>
-  <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-  <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="./src/leaflet.ajax.min.js"></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
   <style>
     #map{ height: 100% }
   </style>
@@ -15,17 +20,24 @@
 
   <script>
 
-  // initialize the map
-  var map = L.map('map').setView([56.4048, -4.6424], 9);
+    // initialize the map
+    var map = L.map('map').setView([56.4048, -4.6424], 9);
 
-  // load a tile layer
-  L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    // load a tile layer
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
 
-  // load GeoJSON from an external file
-  var geojsonLayer = new L.GeoJSON.AJAX("./data/milngavie-drymen.geojson");       
-    geojsonLayer.addTo(map);
+    // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
+    var day1style = {
+      "color": "#ff7800",
+      "weight": 5
+    }
+    $.getJSON("./data/milngavie-drymen.geojson",function(data){
+      L.geoJSON(data, {
+        style: day1style
+      }).addTo(map);
+    });
 
   </script>
 </body>
