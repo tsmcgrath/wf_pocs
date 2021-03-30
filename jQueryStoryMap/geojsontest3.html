@@ -45,9 +45,6 @@
 		zoomOffset: -1
 	}).addTo(map);
 
-	L.marker([56.0031, -4.3655]).addTo(map)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
     // add the WHW route lines
     // Add day 1
     var day1style = {
@@ -67,7 +64,7 @@
         "weight": 5
     }
     // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
-    $.getJSON("./data/milngavie-drymen.geojson",function(data){
+    $.getJSON("./data/drymen-rowardennan.geojson",function(data){
         // add GeoJSON layer to the map once the file is loaded
         L.geoJSON(data, {
             style: day2style
