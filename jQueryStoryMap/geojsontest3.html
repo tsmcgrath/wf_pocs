@@ -3,7 +3,7 @@
 <html>
 <head>
 	
-	<title>Quick Start - Leaflet</title>
+	<title>Geojson Test 3</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,14 +48,6 @@
 	L.marker([56.0031, -4.3655]).addTo(map)
 		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent("You clicked the map at " + e.latlng.toString())
-			.openOn(map);
-	}
-
-	map.on('click', onMapClick);
     // add the WHW route lines
     // Add day 1
     var day1style = {
@@ -69,6 +61,19 @@
             style: day1style
         }).addTo(map);
         });
+            // Add day 1
+    var day2style = {
+        "color": "#4287f5",
+        "weight": 5
+    }
+    // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
+    $.getJSON("./data/milngavie-drymen.geojson",function(data){
+        // add GeoJSON layer to the map once the file is loaded
+        L.geoJSON(data, {
+            style: day2style
+        }).addTo(map);
+        });
+
 
 </script>
 
