@@ -16,6 +16,7 @@
                     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
+                // Colors from: https://colorbrewer2.org/#type=qualitative&scheme=Accent&n=8
                 // add the WHW route lines
                 // Add day 1
                 var day1style = {
