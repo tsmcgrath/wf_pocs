@@ -16,11 +16,11 @@
                     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
-                // Colors from: https://colorbrewer2.org/#type=qualitative&scheme=Accent&n=8
+                // Colors from: https://colorbrewer2.org/#type=qualitative&scheme=Dark2&n=8
                 // add the WHW route lines
                 // Add day 1
                 var day1style = {
-                    "color": "#7fc97f",
+                    "color": "#1b9e77",
                     "weight": 5
                 }
                 // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
@@ -33,7 +33,7 @@
 
                   // Add day 2
                   var day2style = {
-                      "color": "#beaed4",
+                      "color": "#d95f02",
                       "weight": 5
                   }
                   $.getJSON("./data/drymen-rowardennan.geojson",function(data){
@@ -44,7 +44,7 @@
                   });
                     // Add day 3
                     var day3style = {
-                        "color": "#fdc086",
+                        "color": "#7570b3",
                         "weight": 5
                     }
                     // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
