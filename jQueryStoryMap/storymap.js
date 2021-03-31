@@ -18,18 +18,19 @@
 
                 // Colors from: https://colorbrewer2.org/#type=qualitative&scheme=Dark2&n=8
                 // add the WHW route lines
+                // add the WHW route lines
                 // Add day 1
                 var day1style = {
-                    "color": "#1b9e77",
+                    "color": "#7fc97f",
                     "weight": 5
                 }
                 // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
-                $.getJSON("./data/milngavie-drymen.geojson",function(data){
-                    // add GeoJSON layer to the map once the file is loaded
-                    L.geoJSON(data, {
-                        style: day1style
-                    }).addTo(map);
-                  });
+    
+                // add GeoJSON layer to the map once the file is loaded
+                day1layer = L.geoJSON(drymen_rowardennan, {
+                    style: day1style
+                }).addTo(map);
+                map.fitBounds(day1layer.getBounds());
 
                   // Add day 2
                   var day2style = {
@@ -155,7 +156,8 @@
                     if(typeof layer !== 'undefined'){
                       fg.addLayer(layer);
                     };
-                    fg.addLayer(L.marker([marker.lat, marker.lon]));
+                    // turn off the marker label
+                    // fg.addLayer(L.marker([marker.lat, marker.lon]));
 
                     map.setView([marker.lat, marker.lon], marker.zoom, 1);
                 }
