@@ -1,6 +1,9 @@
     (function ($) {
     'use strict';
 
+    // Add geojson files as js scripts. This allows it to work locally as well as when deployed to GH pages
+    // The file is a geojson file with a variable added at the beginning. Variable name is same as file name but with underscore
+
 
     $.fn.storymap = function(options) {
 
@@ -27,36 +30,32 @@
                 // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
     
                 // add GeoJSON layer to the map once the file is loaded
-                day1layer = L.geoJSON(drymen_rowardennan, {
-                    style: day1style
-                }).addTo(map);
-                map.fitBounds(day1layer.getBounds());
-
-                  // Add day 2
-                  var day2style = {
-                      "color": "#d95f02",
-                      "weight": 5
-                  }
-                  $.getJSON("./data/drymen-rowardennan.geojson",function(data){
-                    // add GeoJSON layer to the map once the file is loaded
-                    L.geoJSON(data, {
-                        style: day2style
+                var day1layer = L.geoJSON(milngavie_drymen, {
+                        style: day1style
                     }).addTo(map);
-                  });
-                    // Add day 3
-                    var day3style = {
-                        "color": "#7570b3",
-                        "weight": 5
-                    }
-                    // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
-                    $.getJSON("./data/rowardennan-inverarnan.geojson",function(data){
-                        // add GeoJSON layer to the map once the file is loaded
-                        L.geoJSON(data, {
-                            style: day3style
-                        }).addTo(map);
-                    });
-                return map;
-            }
+                //map.fitBounds(day1layer.getBounds());
+
+                // Add day 2
+                var day2style = {
+                    "color": "#d95f02",
+                    "weight": 5
+                }
+                var day2layer = L.geoJSON(drymen_rowardennan, {
+                    style: day2style
+                }).addTo(map);
+                //map.fitBounds(day2layer.getBounds());
+                
+                // Add day 3
+                var day3style = {
+                    "color": "#7570b3",
+                    "weight": 5
+                }
+                // loading GeoJSON file - Here my .geojson file resides in the data sub-folder
+                var day3layer = L.geoJSON(rowardennan_inverarnan, {
+                    style: day3style
+                }).addTo(map);
+                //map.fitBounds(day3layer.getBounds());
+                }
         };
 
         var settings = $.extend(defaults, options);
@@ -160,6 +159,7 @@
                     // fg.addLayer(L.marker([marker.lat, marker.lon]));
 
                     map.setView([marker.lat, marker.lon], marker.zoom, 1);
+
                 }
 
             }
