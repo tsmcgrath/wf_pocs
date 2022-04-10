@@ -44,7 +44,7 @@
                 header.appendChild(formatter.render())
             }
 
-            const response = await fetch('/wf_pocs/flatgeobuf/test/data/UScounties.fgb');
+            const response = await fetch('../test/data/UScounties.fgb');
             for await (let feature of flatgeobuf.deserialize(response.body, undefined, handleHeaderMeta)) {
                 // Leaflet styling
                 const defaultStyle = { 
