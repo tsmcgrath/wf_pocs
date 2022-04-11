@@ -128,3 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 jQueryStoryMap/jQuery-Plugin-To-Create-A-Map-That-Follows-The-Text-Story-Map (1).zip
+
+# DS Store on a Mac
+.DS_Store
+flatgeobuf/test/.DS_Store
+.DS_Store
