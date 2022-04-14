@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<div class="container">
+    <div class='logos navbar-brand'><a id="app-logo" class="navbar-brand" target="_blank" href="#"><img id="primary-logo" src="images/australian-government-stacked-white.png"/><div id="secondary-logo"><span style="color:white;">National Drought Map</span></div></a><a id="terria-logo-header" target="_blank" href="https://www.data61.csiro.au/"><img src="images/CSIRO-Data61-white.svg"/></a></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+          {{#navItems}}
+              <li class="nav-item {{{class}}}"><a class="nav-link {{{class}}}" href="{{{url}}}">{{{title}}}</a></li>
+          {{/navItems}}
+    </ul>
+  </div>
+</div>
+</nav>
+

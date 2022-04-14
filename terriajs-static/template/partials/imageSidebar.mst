@@ -1,0 +1,5 @@
+<div>
+  {{#imageSidebarItems}}
+    <a href={{{url}}}><img class="img-thumbnail border-0" src={{{src}}} alt={{alt}} class="rounded"/></a>
+  {{/imageSidebarItems}}
+</div>

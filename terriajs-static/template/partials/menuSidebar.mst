@@ -1,0 +1,31 @@
+<ul class="menu-sidebar nav flex-column">
+      <li class="nav-item">
+        <h4 class="nav-sub-heading">How to...</h4>
+           <ul class="nav flex-column">
+            <li><a href="help.html">Get started with {{appName}} </a></li>
+            <li><a href="help.html#feature-info">Find out about a displayed feature</a></li>
+            <li><a href="help.html#identify-drought">How to identify areas in drought</a></li>
+            <li><a href="help.html#add-data">Display my own spatial data</a></li>
+            <li><a href="help.html#download">Download data from National Drought Map </a></li>
+            <li><a href="help.html#share">Share my {{appName}}  view with others and/or print</a></li>
+            <li><a href="help.html#splitter">Work with the Satellite Imagery and the splitter functionality</a></li>
+            <li><a href="help.html#chart">Work with charts</a></li>
+          </ul>
+
+          <h4 class="nav-sub-heading">Key Features</h4>
+          <ul class="nav flex-column">
+            <li><a href="key-features.html">Map Navigation and Display</a></li>
+            <li><a href="key-features.html#data-catalogue">Data Catalogue</a></li>
+            <li><a href="key-features.html#data-workbench">Data Workbench</a></li>
+            <li><a href="key-features.html#splitter">Splitter and Date Picker</a></li>
+            <li><a href="key-features.html#charts">Charts</a></li>
+          </ul>
+
+          <h4 class="nav-sub-heading">Frequently Asked Questions</h4>
+          <ul class="nav flex-column">
+            <li><a href="faq.html">{{appName}} Operation</a></li>
+            <li><a href="faq.html#system-and-data">{{appName}} system and data</a></li>
+            <li><a href="faq.html#reporting-issues">Reporting issues</a></li>
+          </ul>
+        </li>
+</ul>

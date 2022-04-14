@@ -1,0 +1,6 @@
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">{{footerCredit}}</p>
+    <p><strong><a href="../about.html#terms">Terms and conditions</a></strong> – <strong><a href="privacy.html">Privacy</a></strong></p>
+  </div>
+</footer>
