@@ -1,7 +1,7 @@
 /* styles.css */
 .bordered-container {
-    border: 80px solid transparent; /* Creates space for the border image */
-    border-image: url('./aztec-border-80px.webp') 320 round; /* Applies the border image */
+    border: 220px solid transparent; /* Creates space for the border image */
+    border-image: url('./220px-Chicomecoatl_1.jpg') 320 round; /* Applies the border image */
     padding: 20px; /* Adds spacing inside the border */
     text-align: center; /* Centers the text */
     background-color: #f9f9f9; /* Optional: background for the container */

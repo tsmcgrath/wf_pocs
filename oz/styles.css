@@ -1,0 +1,8 @@
+/* styles.css */
+.bordered-container {
+    border: 20px solid transparent; /* Creates space for the border image */
+    border-image: url('./DALL·E 2025-01-14 14.27.15-oz.webp') 100 round; /* Applies the border image */
+    padding: 1px; /* Adds spacing inside the border */
+    text-align: center; /* Centers the text */
+    background-color: #f9f9f9; /* Optional: background for the container */
+}
